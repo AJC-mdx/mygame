@@ -6,14 +6,14 @@
     <title>Riddle Quiz</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <h1>Riddle Quiz</h1>
 
     <!--displays the contents of the page-->
-    <button  onclick="logout();" style="float: right;">Logout</button>
+    <button class="button"  onclick="logout();">Logout</button>
 
     <p id="Question"></p><br>
 
@@ -35,7 +35,7 @@
         window.onload = start();
 
         function start() {
-            gameplace.innerHTML = '<button onclick="q1()">Start</button>';
+            gameplace.innerHTML = '<button class="button" onclick="q1()">Start</button>';
         }
 
         function q1() {

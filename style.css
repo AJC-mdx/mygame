@@ -1,0 +1,40 @@
+/* import google font Raleway */
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+/* styling for the whole page */
+*{
+  font-family: Raleway;
+  text-decoration: none;
+}
+
+.title {
+    text-align: center;
+    color: purple;
+}
+
+.button {
+    color: white;
+  font-weight: bold;
+  background-color: #0065fc;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-color: #0065fc;
+  padding: 10px;
+  margin-left: -5px;
+}
+
+#Question{
+    color: blueviolet;
+}
+#gamePlace{
+    color: #0065fc;
+}
+#result{
+    color: #0065fc;
+}
+#currentScore{
+    color: #0065fc;
+}
+#Leaderboard{
+    color: #0065fc;
+}
