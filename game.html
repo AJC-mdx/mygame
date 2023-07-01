@@ -10,10 +10,10 @@
 </head>
 
 <body>
-    <h1>Riddle Quiz</h1>
+    <h1 class="title">Riddle Quiz</h1>
 
     <!--displays the contents of the page-->
-    <button class="button"  onclick="logout();">Logout</button>
+    <button class="button logout"  onclick="logout();">Log out</button>
 
     <p id="Question"></p><br>
 
@@ -35,7 +35,7 @@
         window.onload = start();
 
         function start() {
-            gameplace.innerHTML = '<button class="button" onclick="q1()">Start</button>';
+            gameplace.innerHTML = '<button class="button start" onclick="q1()">Start</button>';
         }
 
         function q1() {
@@ -45,7 +45,7 @@
             answer = 'Mary';
             answer2 = 'mary';
             //answer is checked when the button is clicked
-            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+            gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
 
             this.checkResponse = function () {
                 let userResponse = document.getElementById("response").value;
@@ -54,11 +54,11 @@
                     currentScore.innerHTML = 'current score: ' + 1;
                     updateScore();
                     //it displays a prompt for the user to move on to the next question
-                    results.innerHTML = 'Correct   <button onclick = "q2();">Next Question</button>';
+                    results.innerHTML = 'Correct   <button class="button" onclick = "q2();">Next Question</button>';
                     results.style.color = 'green';
                 } else {
                     //the field becomes blank and it notifies user that they are incorrect
-                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
                     results.innerHTML = 'Incorrect';
                     results.style.color = 'red';
                 }
@@ -80,17 +80,17 @@
             question.innerHTML = '2.<br>Cloud is my mother. Wind is my father. <br>I come down but never go up.<br>what am I?';
             answer = 'Rain';
             answer2 = 'rain';
-            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+            gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
 
             this.checkResponse = function () {
                 let userResponse = document.getElementById("response").value;
                 if (userResponse == answer || userResponse == answer2) {
                     currentScore.innerHTML = 'current score: ' + 2;
                     updateScore();
-                    results.innerHTML = 'Correct   <button onclick = "q3();">Next Question</button>';
+                    results.innerHTML = 'Correct   <button class="button" onclick = "q3();">Next Question</button>';
                     results.style.color = 'green';
                 } else {
-                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
                     results.innerHTML = 'Incorrect';
                     results.style.color = 'red';
                 }
@@ -110,17 +110,17 @@
             question.innerHTML = '3.<br>Which word in the dictionary is spelled incorrectly?';
             answer = 'Incorrectly';
             answer = 'incorrectly';
-            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+            gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
 
             this.checkResponse = function () {
                 let userResponse = document.getElementById("response").value;
                 if (userResponse == answer || userResponse == answer2) {
                     currentScore.innerHTML = 'current score: ' + 3;
                     updateScore();
-                    results.innerHTML = 'Correct   <button onclick = "q4();">Next Question</button>';
+                    results.innerHTML = 'Correct   <button class="button" onclick = "q4();">Next Question</button>';
                     results.style.color = 'green';
                 } else {
-                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
                     results.innerHTML = 'Incorrect';
                     results.style.color = 'red';
                 }
@@ -140,17 +140,17 @@
             question.innerHTML = '4.<br>I am tall when I am young and short when I am old<br>what am I?';
             answer = 'Candle';
             answer = 'candle';
-            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+            gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
 
             this.checkResponse = function () {
                 let userResponse = document.getElementById("response").value;
                 if (userResponse == answer || userResponse == answer2) {
                     currentScore.innerHTML = 'current score: ' + 4;
                     updateScore();
-                    results.innerHTML = 'Correct   <button onclick = "q5();">Next Question</button>';
+                    results.innerHTML = 'Correct   <button class="button" onclick = "q5();">Next Question</button>';
                     results.style.color = 'green';
                 } else {
-                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
                     results.innerHTML = 'Incorrect';
                     results.style.color = 'red';
                 }
@@ -170,17 +170,17 @@
             question.innerHTML = '5.<br>What invention lets you look right through a wall?';
             answer = 'Window';
             answer = 'window';
-            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+            gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
 
             this.checkResponse = function () {
                 let userResponse = document.getElementById("response").value;
                 if (userResponse == answer || userResponse == answer2) {
                     currentScore.innerHTML = 'current score: ' + 5;
                     updateScore();
-                    results.innerHTML = 'Correct   <button onclick = "q6();">Next Question</button>';
+                    results.innerHTML = 'Correct   <button class="button" onclick = "q6();">Next Question</button>';
                     results.style.color = 'green';
                 } else {
-                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
                     results.innerHTML = 'Incorrect';
                     results.style.color = 'red';
                 }
@@ -200,17 +200,17 @@
             question.innerHTML = '6.<br>What word becomes shorter when you add 2 letters to it?';
             answer = 'Short';
             answer = 'short';
-            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+            gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
 
             this.checkResponse = function () {
                 let userResponse = document.getElementById("response").value;
                 if (userResponse == answer || userResponse == answer2) {
                     currentScore.innerHTML = 'current score: ' + 6;
                     updateScore();
-                    results.innerHTML = 'Correct   <button onclick = "q7();">Next Question</button>';
+                    results.innerHTML = 'Correct   <button class="button" onclick = "q7();">Next Question</button>';
                     results.style.color = 'green';
                 } else {
-                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
                     results.innerHTML = 'Incorrect';
                     results.style.color = 'red';
                 }
@@ -230,17 +230,17 @@
             question.innerHTML = '7.<br>What can travel around the world while staying in a corner?';
             answer = 'Stamp';
             answer = 'stamp';
-            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+            gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
 
             this.checkResponse = function () {
                 let userResponse = document.getElementById("response").value;
                 if (userResponse == answer || userResponse == answer2) {
                     currentScore.innerHTML = 'current score: ' + 7;
                     updateScore();
-                    results.innerHTML = 'Correct   <button onclick = "q8();">Next Question</button>';
+                    results.innerHTML = 'Correct   <button class="button" onclick = "q8();">Next Question</button>';
                     results.style.color = 'green';
                 } else {
-                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
                     results.innerHTML = 'Incorrect';
                     results.style.color = 'red';
                 }
@@ -260,17 +260,17 @@
             question.innerHTML = '8.<br>Poor people have it<br>Rich people need it<br>If you eat it you die<br>What is it?';
             answer = 'Nothing';
             answer = 'nothing';
-            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+            gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
 
             this.checkResponse = function () {
                 let userResponse = document.getElementById("response").value;
                 if (userResponse == answer || userResponse == answer2) {
                     currentScore.innerHTML = 'current score: ' + 8;
                     updateScore();
-                    results.innerHTML = 'Correct   <button onclick = "q9();">Next Question</button>';
+                    results.innerHTML = 'Correct   <button class="button" onclick = "q9();">Next Question</button>';
                     results.style.color = 'green';
                 } else {
-                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
                     results.innerHTML = 'Incorrect';
                     results.style.color = 'red';
                 }
@@ -290,17 +290,17 @@
             question.innerHTML = '9.<br>What starts with the letter "t"<br>is filled with "t" and ends in "t"?';
             answer = 'Teapot';
             answer = 'teapot';
-            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+            gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
 
             this.checkResponse = function () {
                 let userResponse = document.getElementById("response").value;
                 if (userResponse == answer || userResponse == answer2) {
                     currentScore.innerHTML = 'current score: ' + 9;
                     updateScore();
-                    results.innerHTML = 'Correct   <button onclick = "q10();">Next Question</button>';
+                    results.innerHTML = 'Correct   <button class="button" onclick = "q10();">Next Question</button>';
                     results.style.color = 'green';
                 } else {
-                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
                     results.innerHTML = 'Incorrect';
                     results.style.color = 'red';
                 }
@@ -320,19 +320,19 @@
             question.innerHTML = '10.<br>What has 88 keys, but can not open a single door?';
             answer = 'Piano';
             answer = 'Piano';
-            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+            gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
 
             this.checkResponse = function () {
                 let userResponse = document.getElementById("response").value;
                 if (userResponse == answer || userResponse == answer2) {
                     question.innerHTML = "";
                     //displays victory message and option to play again
-                    gameplace.innerHTML = '<h1>Well Done. You Won.</h1> <button onclick="start()">Play Again</button>';
+                    gameplace.innerHTML = '<h1>Well Done. You Won.</h1> <button class="button start" onclick="start()">Play Again</button>';
                     currentScore.innerHTML = 'current score: ' + 10;
                     updateScore();
                     results.innerHTML = "";
                 } else {
-                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    gameplace.innerHTML = '<input type="text" id="response"> <button class="button" onclick="checkResponse()">Submit</button>';
                     results.innerHTML = 'Incorrect';
                     results.style.color = 'red';
                 }

@@ -16,22 +16,22 @@
     <!--displays the inputs-->
     <div>
         Username:
-        <input type="text" placeholder="Name" id="username" /><br>
+        <input class="username inputBar" type="text" placeholder="Name" id="username" /><br>
 
         Email:
-        <input type="email" placeholder="name@something.com" id="email" /><br>
+        <input class="email inputBar" type="email" placeholder="name@something.com" id="email" /><br>
 
         Password:
-        <input type="password" placeholder="Password" id="password" /><br>
+        <input class="password inputBar" type="password" placeholder="Password" id="password" /><br>
 
         Date of birth:
-        <input type="date" id="DOB" /><br>
+        <input class="dob inputBar" type="date" id="DOB" /><br>
 
-        <button onclick="checkInputs()">Register</button>
+        <button class="button login" onclick="checkInputs()">Register</button>
     </div>
 
     <!--displays the error messages and confirms registration-->
-    <p id="Errors" style="color: red;"></p>
+    <p id="Errors"></p>
     <p id="Result"></p>
 
 

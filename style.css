@@ -1,30 +1,56 @@
-/* import google font Raleway */
-@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
-
 /* styling for the whole page */
 *{
-  font-family: Raleway;
+  /*font-family: Raleway;*/
   text-decoration: none;
+  text-align: center;
 }
 
 .title {
-    text-align: center;
-    color: purple;
+    color: rgb(201, 102, 201);
 }
 
 .button {
-    color: white;
   font-weight: bold;
-  background-color: #0065fc;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-color: #0065fc;
-  padding: 10px;
-  margin-left: -5px;
+  border-radius: 10px;
+  background-color: white;
+  
 }
 
+.button:hover {
+    background-color: lightgreen;
+    cursor: pointer;
+}
+
+.logout {
+    float: right;
+    padding: 5px;
+    transition: 1s;
+}
+
+.logout:hover {
+    background-color: red;
+    box-shadow: 2px 2px 12px black;
+    cursor: pointer;
+}
+
+.start {
+    font-size: larger;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: 1s;
+}
+
+.start:hover {
+    background-color: #ecddff;
+    box-shadow: 2px 2px 12px grey;
+    cursor: pointer;
+}
+
+
+
 #Question{
-    color: blueviolet;
+    margin-top: 80px;
 }
 #gamePlace{
     color: #0065fc;
@@ -36,5 +62,39 @@
     color: #0065fc;
 }
 #Leaderboard{
-    color: #0065fc;
+    margin-top: 150px;
+}
+
+
+/* styling for the LOGIN page */
+
+.inputBar {
+    margin-top: 10px;
+}
+
+.email {
+    margin-left: 20px;
+}
+
+.login {
+    margin-top: 20px;
+}
+
+/* styling for the REGISTRATION page */
+
+.username {
+    margin-left: 0px;
+}
+.email {
+    margin-left: 25px;
+}
+.password {
+    margin-left: 5px;
+}
+.dob {
+    margin-left: 30px;
+}
+
+#Errors {
+    color: red;
 }
