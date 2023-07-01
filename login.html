@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <h1>Login</h1>
+
+    <!--displays the inputs-->
+    <div id="loginPara">
+        Email:
+        <input type="email" id="email"><br>
+        Password:
+        <input type="password" id="password"><br>
+
+        <button onclick="login()">Login</button>
+    </div>
+    <!--displays error messages-->
+    <p id="loginError" style="color:red;"></p>
+
+    <script>
+        //when the window loads it checks to see if the user is already logged in
+        window.onload = checkLogin;
+
+        function checkLogin() {
+            if (sessionStorage.loggedInUsrEmail !== undefined) {
+                let usrObj = JSON.parse(localStorage[sessionStorage.loggedInUsrEmail]);
+
+                document.getElementById("loginPara").innerHTML = usrObj.email + " logged in.";
+            }
+        }
+
+
+        function login() {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            //checks to see if the field has been left empty
+            if (email === "") {
+                document.getElementById("loginError").innerHTML = "please fill in the form";
+                return;
+            } else { document.getElementById("loginError").innerHTML = ""; }
+
+            //if there is no email matching the users email it will notify them and prompt them to register first
+            if (localStorage[email] === undefined) {
+                document.getElementById("loginError").innerHTML = 'No account with this email. <a href="registration.html">Register</a> ';
+                return;
+            }
+            else {
+                let usrObj = JSON.parse(localStorage[email]);
+
+                //checks to see that the password matches the passsword in storage
+                if (password === usrObj.password) {
+                    document.getElementById("loginError").innerHTML = "";
+                    //if the password matches, it takes the user to the game page
+                    window.location.href = "game.html";
+                    sessionStorage.loggedInUsrEmail = usrObj.email;
+                }
+                else {
+                    document.getElementById("loginError").innerHTML = "Password is incorrect. Please try again.";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Riddle Quiz</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Riddle Quiz</h1>
+
+    <!--displays the contents of the page-->
+    <button  onclick="logout();" style="float: right;">Logout</button>
+
+    <p id="Question"></p><br>
+
+    <p id="gamePlace"></p>
+
+    <p id="result"></p>
+
+    <div id="currentScore"></div>
+
+    <div id="Leaderboard"></div>
+
+    <script>
+        let question = document.getElementById("Question");
+        let gameplace = document.getElementById("gamePlace");
+        let results = document.getElementById("result");
+        let currentScore = document.getElementById("currentScore");
+        let answer;
+        //displays start button when the page loads
+        window.onload = start();
+
+        function start() {
+            gameplace.innerHTML = '<button onclick="q1()">Start</button>';
+        }
+
+        function q1() {
+            //shows question and current score of the user
+            currentScore.innerHTML = 'current score: ' + 0;
+            question.innerHTML = '1.<br>Marys father has 5 daughters:<br> Nana, Nene, Nini, Nono<br>What is the 5th daughters name?';
+            answer = 'Mary';
+            answer2 = 'mary';
+            //answer is checked when the button is clicked
+            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+
+            this.checkResponse = function () {
+                let userResponse = document.getElementById("response").value;
+                if (userResponse == answer || userResponse == answer2) {
+                    //if users response is the same as the answer it updates the score
+                    currentScore.innerHTML = 'current score: ' + 1;
+                    updateScore();
+                    //it displays a prompt for the user to move on to the next question
+                    results.innerHTML = 'Correct   <button onclick = "q2();">Next Question</button>';
+                    results.style.color = 'green';
+                } else {
+                    //the field becomes blank and it notifies user that they are incorrect
+                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    results.innerHTML = 'Incorrect';
+                    results.style.color = 'red';
+                }
+            }
+
+            this.updateScore = function () {
+                if (sessionStorage.loggedInUsrEmail !== undefined) {
+                    //checks that there is a logged in user
+                    let usr = JSON.parse(localStorage[sessionStorage.loggedInUsrEmail]);
+                    //updates their top score and stores it in local storage
+                    usr.topScore = 1;
+                    localStorage[usr.email] = JSON.stringify(usr);
+                }
+            }
+        }
+
+        function q2() {
+            results.innerHTML = "";
+            question.innerHTML = '2.<br>Cloud is my mother. Wind is my father. <br>I come down but never go up.<br>what am I?';
+            answer = 'Rain';
+            answer2 = 'rain';
+            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+
+            this.checkResponse = function () {
+                let userResponse = document.getElementById("response").value;
+                if (userResponse == answer || userResponse == answer2) {
+                    currentScore.innerHTML = 'current score: ' + 2;
+                    updateScore();
+                    results.innerHTML = 'Correct   <button onclick = "q3();">Next Question</button>';
+                    results.style.color = 'green';
+                } else {
+                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    results.innerHTML = 'Incorrect';
+                    results.style.color = 'red';
+                }
+            }
+
+            this.updateScore = function () {
+                if (sessionStorage.loggedInUsrEmail !== undefined) {
+                    let usr = JSON.parse(localStorage[sessionStorage.loggedInUsrEmail]);
+                    usr.topScore = 2;
+                    localStorage[usr.email] = JSON.stringify(usr);
+                }
+            }
+        }
+
+        function q3() {
+            results.innerHTML = "";
+            question.innerHTML = '3.<br>Which word in the dictionary is spelled incorrectly?';
+            answer = 'Incorrectly';
+            answer = 'incorrectly';
+            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+
+            this.checkResponse = function () {
+                let userResponse = document.getElementById("response").value;
+                if (userResponse == answer || userResponse == answer2) {
+                    currentScore.innerHTML = 'current score: ' + 3;
+                    updateScore();
+                    results.innerHTML = 'Correct   <button onclick = "q4();">Next Question</button>';
+                    results.style.color = 'green';
+                } else {
+                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    results.innerHTML = 'Incorrect';
+                    results.style.color = 'red';
+                }
+            }
+
+            this.updateScore = function () {
+                if (sessionStorage.loggedInUsrEmail !== undefined) {
+                    let usr = JSON.parse(localStorage[sessionStorage.loggedInUsrEmail]);
+                    usr.topScore = 3;
+                    localStorage[usr.email] = JSON.stringify(usr);
+                }
+            }
+        }
+
+        function q4() {
+            results.innerHTML = "";
+            question.innerHTML = '4.<br>I am tall when I am young and short when I am old<br>what am I?';
+            answer = 'Candle';
+            answer = 'candle';
+            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+
+            this.checkResponse = function () {
+                let userResponse = document.getElementById("response").value;
+                if (userResponse == answer || userResponse == answer2) {
+                    currentScore.innerHTML = 'current score: ' + 4;
+                    updateScore();
+                    results.innerHTML = 'Correct   <button onclick = "q5();">Next Question</button>';
+                    results.style.color = 'green';
+                } else {
+                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    results.innerHTML = 'Incorrect';
+                    results.style.color = 'red';
+                }
+            }
+
+            this.updateScore = function () {
+                if (sessionStorage.loggedInUsrEmail !== undefined) {
+                    let usr = JSON.parse(localStorage[sessionStorage.loggedInUsrEmail]);
+                    usr.topScore = 4;
+                    localStorage[usr.email] = JSON.stringify(usr);
+                }
+            }
+        }
+
+        function q5() {
+            results.innerHTML = "";
+            question.innerHTML = '5.<br>What invention lets you look right through a wall?';
+            answer = 'Window';
+            answer = 'window';
+            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+
+            this.checkResponse = function () {
+                let userResponse = document.getElementById("response").value;
+                if (userResponse == answer || userResponse == answer2) {
+                    currentScore.innerHTML = 'current score: ' + 5;
+                    updateScore();
+                    results.innerHTML = 'Correct   <button onclick = "q6();">Next Question</button>';
+                    results.style.color = 'green';
+                } else {
+                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    results.innerHTML = 'Incorrect';
+                    results.style.color = 'red';
+                }
+            }
+
+            this.updateScore = function () {
+                if (sessionStorage.loggedInUsrEmail !== undefined) {
+                    let usr = JSON.parse(localStorage[sessionStorage.loggedInUsrEmail]);
+                    usr.topScore = 5;
+                    localStorage[usr.email] = JSON.stringify(usr);
+                }
+            }
+        }
+
+        function q6() {
+            results.innerHTML = "";
+            question.innerHTML = '6.<br>What word becomes shorter when you add 2 letters to it?';
+            answer = 'Short';
+            answer = 'short';
+            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+
+            this.checkResponse = function () {
+                let userResponse = document.getElementById("response").value;
+                if (userResponse == answer || userResponse == answer2) {
+                    currentScore.innerHTML = 'current score: ' + 6;
+                    updateScore();
+                    results.innerHTML = 'Correct   <button onclick = "q7();">Next Question</button>';
+                    results.style.color = 'green';
+                } else {
+                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    results.innerHTML = 'Incorrect';
+                    results.style.color = 'red';
+                }
+            }
+
+            this.updateScore = function () {
+                if (sessionStorage.loggedInUsrEmail !== undefined) {
+                    let usr = JSON.parse(localStorage[sessionStorage.loggedInUsrEmail]);
+                    usr.topScore = 6;
+                    localStorage[usr.email] = JSON.stringify(usr);
+                }
+            }
+        }
+
+        function q7() {
+            results.innerHTML = "";
+            question.innerHTML = '7.<br>What can travel around the world while staying in a corner?';
+            answer = 'Stamp';
+            answer = 'stamp';
+            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+
+            this.checkResponse = function () {
+                let userResponse = document.getElementById("response").value;
+                if (userResponse == answer || userResponse == answer2) {
+                    currentScore.innerHTML = 'current score: ' + 7;
+                    updateScore();
+                    results.innerHTML = 'Correct   <button onclick = "q8();">Next Question</button>';
+                    results.style.color = 'green';
+                } else {
+                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    results.innerHTML = 'Incorrect';
+                    results.style.color = 'red';
+                }
+            }
+
+            this.updateScore = function () {
+                if (sessionStorage.loggedInUsrEmail !== undefined) {
+                    let usr = JSON.parse(localStorage[sessionStorage.loggedInUsrEmail]);
+                    usr.topScore = 7;
+                    localStorage[usr.email] = JSON.stringify(usr);
+                }
+            }
+        }
+
+        function q8() {
+            results.innerHTML = "";
+            question.innerHTML = '8.<br>Poor people have it<br>Rich people need it<br>If you eat it you die<br>What is it?';
+            answer = 'Nothing';
+            answer = 'nothing';
+            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+
+            this.checkResponse = function () {
+                let userResponse = document.getElementById("response").value;
+                if (userResponse == answer || userResponse == answer2) {
+                    currentScore.innerHTML = 'current score: ' + 8;
+                    updateScore();
+                    results.innerHTML = 'Correct   <button onclick = "q9();">Next Question</button>';
+                    results.style.color = 'green';
+                } else {
+                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    results.innerHTML = 'Incorrect';
+                    results.style.color = 'red';
+                }
+            }
+
+            this.updateScore = function () {
+                if (sessionStorage.loggedInUsrEmail !== undefined) {
+                    let usr = JSON.parse(localStorage[sessionStorage.loggedInUsrEmail]);
+                    usr.topScore = 8;
+                    localStorage[usr.email] = JSON.stringify(usr);
+                }
+            }
+        }
+
+        function q9() {
+            results.innerHTML = "";
+            question.innerHTML = '9.<br>What starts with the letter "t"<br>is filled with "t" and ends in "t"?';
+            answer = 'Teapot';
+            answer = 'teapot';
+            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+
+            this.checkResponse = function () {
+                let userResponse = document.getElementById("response").value;
+                if (userResponse == answer || userResponse == answer2) {
+                    currentScore.innerHTML = 'current score: ' + 9;
+                    updateScore();
+                    results.innerHTML = 'Correct   <button onclick = "q10();">Next Question</button>';
+                    results.style.color = 'green';
+                } else {
+                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    results.innerHTML = 'Incorrect';
+                    results.style.color = 'red';
+                }
+            }
+
+            this.updateScore = function () {
+                if (sessionStorage.loggedInUsrEmail !== undefined) {
+                    let usr = JSON.parse(localStorage[sessionStorage.loggedInUsrEmail]);
+                    usr.topScore = 9;
+                    localStorage[usr.email] = JSON.stringify(usr);
+                }
+            }
+        }
+
+        function q10() {
+            results.innerHTML = "";
+            question.innerHTML = '10.<br>What has 88 keys, but can not open a single door?';
+            answer = 'Piano';
+            answer = 'Piano';
+            gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+
+            this.checkResponse = function () {
+                let userResponse = document.getElementById("response").value;
+                if (userResponse == answer || userResponse == answer2) {
+                    question.innerHTML = "";
+                    //displays victory message and option to play again
+                    gameplace.innerHTML = '<h1>Well Done. You Won.</h1> <button onclick="start()">Play Again</button>';
+                    currentScore.innerHTML = 'current score: ' + 10;
+                    updateScore();
+                    results.innerHTML = "";
+                } else {
+                    gameplace.innerHTML = '<input type="text" id="response"> <button onclick="checkResponse()">Submit</button>';
+                    results.innerHTML = 'Incorrect';
+                    results.style.color = 'red';
+                }
+            }
+
+            this.updateScore = function () {
+                if (sessionStorage.loggedInUsrEmail !== undefined) {
+                    let usr = JSON.parse(localStorage[sessionStorage.loggedInUsrEmail]);
+                    usr.topScore = 10;
+                    localStorage[usr.email] = JSON.stringify(usr);
+                }
+            }
+        }
+
+
+        //checks user from local storage and shows their name and top score
+        function loadLeaderboard() {
+            let str = "<table><tr><th>Name:</th><th>Score:</th></tr>";
+            for (let key of Object.keys(localStorage)) {
+                let usr = JSON.parse(localStorage[key]);
+                str += "<tr><td>" + usr.username + "</td><td>" + usr.topScore + "</td></tr>";
+            }
+            str += "</table>";
+            document.getElementById("Leaderboard").innerHTML = str;
+        }
+
+
+        //loads Leaderboard when page loads
+        window.onload = () => {
+            loadLeaderboard();
+        }
+
+
+        //Logs user out and takes them back to login page
+        function logout() {
+            sessionStorage.loggedInUsrEmail = undefined;
+            window.location.href = "login.html";
+        }
+
+    </script>
+</body>
+
+</html>
