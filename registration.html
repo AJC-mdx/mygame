@@ -33,6 +33,7 @@
     <!--displays the error messages and confirms registration-->
     <p id="Errors"></p>
     <p id="Result"></p>
+    
 
 
     <script>
@@ -123,7 +124,7 @@
 
             localStorage[usrObject.email] = JSON.stringify(usrObject);
 
-            document.getElementById("Result").innerHTML = "<b>Registration successful.</b>";
+            document.getElementById("Result").innerHTML = "<b>Registration successful.<br><br><a class='continue' href='game.html'>Continue</a></b>";
         }
 
     </script>

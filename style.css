@@ -98,3 +98,16 @@
 #Errors {
     color: red;
 }
+
+.continue {
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.continue:hover {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
